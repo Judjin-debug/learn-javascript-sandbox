@@ -4,11 +4,7 @@ let user = {
 };
   
 const countObjProps = (obj) => {
-    let count = 0;
-    for (let keys of Object.keys(obj)) {
-        count++;
-    };
-    return count;
+    return Object.keys(obj).length;
 };
 
 console.log(countObjProps(user));
