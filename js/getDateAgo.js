@@ -1,8 +1,8 @@
 let date = new Date(2015, 0, 2);
 
 function getDateAgo (date, days) {
-    const prevDate = new Date(date - days * 1000 * 60 * 60 * 24);
-    return prevDate.getDate();
+    let temp = new Date(date.getTime());
+    return new Date(temp.setDate(temp.getDate() - days)).getDate();
 };
 
 console.log(getDateAgo(date, 5));
