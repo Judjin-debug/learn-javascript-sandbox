@@ -24,18 +24,12 @@ function fib(n) {
 
 };
 
-let timer = function(name) {
-    let start = new Date();
-    return {
-        stop: function() {
-            let end = new Date();
-            let time = end.getTime() - start.getTime();
-            console.log(`Elapsed time of ${name} is ${time} ms`);
-        }
-    };
+
+function benchmark(func, arg) {
+    const t0 = performance.now();
+    console.log(func(arg));
+    const t1 = performance.now();
+    console.log(`Call to ${func.name} took ${t1 - t0} milliseconds.`);
 };
 
-let t = timer('Fibonacci');
-console.log(fibonacci(77));
-t.stop();
-
+benchmark(fibonacci, 77);
