@@ -24,4 +24,18 @@ function fib(n) {
 
 };
 
-console.log(fibonacci(18)); //2584
+let timer = function(name) {
+    let start = new Date();
+    return {
+        stop: function() {
+            let end = new Date();
+            let time = end.getTime() - start.getTime();
+            console.log(`Elapsed time of ${name} is ${time} ms`);
+        }
+    };
+};
+
+let t = timer('Fibonacci');
+console.log(fibonacci(77));
+t.stop();
+
