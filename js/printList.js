@@ -1,6 +1,6 @@
 function printList(list) {
     console.log(list.value);
-    if (list.next !== null) return printList(list.next);
+    if (list.next !== null) printList(list.next);
 };
 
 function printListLoop(list) {
